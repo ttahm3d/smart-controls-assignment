@@ -110,7 +110,7 @@ const Button = styled.button`
 `;
 
 const FlexBox = styled.div`
-  margin: 2rem 0;
+  margin: 2rem 1rem;
   display: flex;
   justify-content: center;
   gap: 2rem;
