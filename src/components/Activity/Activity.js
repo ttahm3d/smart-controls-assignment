@@ -27,7 +27,7 @@ const Activity = ({ activity, handleStatusChange }) => {
       </FlexBox>
       <FlexBox>
         <ButtonComplete
-          onClick={() => handleStatusChange(activity.key, 0)}
+          onClick={() => handleStatusChange(activity.key, "completed")}
           disabled={
             activity.status === "completed" ||
             activity.status === "notInterested"
@@ -36,7 +36,7 @@ const Activity = ({ activity, handleStatusChange }) => {
           <AiOutlineCheck />
         </ButtonComplete>
         <ButtonClose
-          onClick={() => handleStatusChange(activity.key, 1)}
+          onClick={() => handleStatusChange(activity.key, "notInterested")}
           disabled={
             activity.status === "completed" ||
             activity.status === "notInterested"
@@ -72,8 +72,8 @@ const ActivityCard = styled.div`
 `;
 
 const ActivityType = styled.p`
-  background-color: hsla(209, 50%, 75%, 1);
-  color: hsla(209, 90%, 55%, 1);
+  background-color: hsla(260, 50%, 75%, 1);
+  color: hsla(260, 90%, 55%, 1);
   padding: 0.5rem;
   font-size: 0.8rem;
   font-weight: 600;

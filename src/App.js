@@ -35,19 +35,29 @@ function App() {
     localStorage.setItem("my-activity-list", JSON.stringify(activityList));
   });
 
-  useEffect(() => {}, [activity, activityList, filteredList]);
+  useEffect(() => {}, [activity]);
 
-  const handleStatusChange = (activityKey, id) => {
-    const changedActivity = activityList.filter(
-      (activity) => activity.key === activityKey
-    );
-    if (id === 0) {
-      changedActivity[0].status = "completed";
-    } else if (id === 1) {
-      changedActivity[0].status = "notInterested";
-    }
-    setActivityList(activityList);
+  useEffect(() => {}, [activityList]);
+
+  useEffect(() => {}, [filteredList]);
+
+  const handleStatusChange = (activityKey, text) => {
+    const changedActivityList = activityList.map((activity) => {
+      if (activity.key === activityKey) {
+        const updatedActivity = {
+          ...activity,
+          status: text,
+        };
+
+        return updatedActivity;
+      }
+      return activity;
+    });
+
+    setActivityList(changedActivityList);
   };
+
+  useEffect(() => {});
 
   useEffect(() => {
     if (selectedOption === "none" || !selectedOption) {
