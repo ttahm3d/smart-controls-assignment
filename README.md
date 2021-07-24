@@ -12,3 +12,7 @@ Project was bootstrapped with Create-React-App. Following additional libraries o
 - Run `cd smart-controls-assignment`
 - Run `npm install` - this will take time
 - After it is completed, run `npm start`. Application will open in port http://localhost:3000
+
+## Netlify
+
+I have hosted it on netlify in the [link](https://practical-brahmagupta-9f8e38.netlify.app)
